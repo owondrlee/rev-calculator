@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Leak Calculator | Wonderly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Revenue Leak Calculator</h1>
+      <p class="tagline">See how much revenue might be slipping through the cracks</p>
+    </header>
+
+    <div class="header-controls">
+    <div class="mode-toggle" role="group" aria-label="Copy tone">
+      <button type="button" class="mode-btn active" data-mode="calm">Calm</button>
+      <button type="button" class="mode-btn" data-mode="savage">Savage</button>
+    </div>
+    </div>
+
+    <div class="grid">
+      <section class="card card-inputs">
+        <h2>Your business</h2>
+
+        <label for="industry">Industry</label>
+        <input type="text" id="industry" list="industries" placeholder="Search industries..." autocomplete="off">
+
+        <datalist id="industries">
+          <option value="Accounting">Accounting</option>
+          <option value="Acupuncture">Acupuncture</option>
+          <option value="After-school program">After-school program</option>
+          <option value="Air conditioning">Air conditioning</option>
+          <option value="Appliance repair">Appliance repair</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Art classes">Art classes</option>
+          <option value="Auto body shop">Auto body shop</option>
+          <option value="Auto detailing">Auto detailing</option>
+          <option value="Auto repair">Auto repair</option>
+          <option value="Bakery">Bakery</option>
+          <option value="Barber">Barber</option>
+          <option value="Beauty salon">Beauty salon</option>
+          <option value="Bike shop">Bike shop</option>
+          <option value="Bookkeeping">Bookkeeping</option>
+          <option value="Cafe">Cafe</option>
+          <option value="Car wash">Car wash</option>
+          <option value="Catering">Catering</option>
+          <option value="Childcare">Childcare</option>
+          <option value="Chiropractic">Chiropractic</option>
+          <option value="Cleaning service">Cleaning service</option>
+          <option value="Coaching">Coaching</option>
+          <option value="Commercial cleaning">Commercial cleaning</option>
+          <option value="Concrete contractor">Concrete contractor</option>
+          <option value="Contractor">Contractor</option>
+          <option value="Crossfit gym">Crossfit gym</option>
+          <option value="Dance studio">Dance studio</option>
+          <option value="Daycare">Daycare</option>
+          <option value="Dental">Dental</option>
+          <option value="Dog walking">Dog walking</option>
+          <option value="Dry cleaning">Dry cleaning</option>
+          <option value="Ecommerce">Ecommerce</option>
+          <option value="Electrician">Electrician</option>
+          <option value="Event catering">Event catering</option>
+          <option value="Fencing">Fencing</option>
+          <option value="Fitness center">Fitness center</option>
+          <option value="Florist">Florist</option>
+          <option value="Flooring">Flooring</option>
+          <option value="Garden center">Garden center</option>
+          <option value="General contractor">General contractor</option>
+          <option value="Gym">Gym</option>
+          <option value="Hair salon">Hair salon</option>
+          <option value="Home care">Home care</option>
+          <option value="HVAC">HVAC</option>
+          <option value="Insurance agency">Insurance agency</option>
+          <option value="Interior design">Interior design</option>
+          <option value="Janitorial">Janitorial</option>
+          <option value="Landscaping">Landscaping</option>
+          <option value="Language school">Language school</option>
+          <option value="Laundromat">Laundromat</option>
+          <option value="Law firm">Law firm</option>
+          <option value="Lawn care">Lawn care</option>
+          <option value="Locksmith">Locksmith</option>
+          <option value="Luxury catering">Luxury catering</option>
+          <option value="Marketing agency">Marketing agency</option>
+          <option value="Martial arts">Martial arts</option>
+          <option value="Massage therapy">Massage therapy</option>
+          <option value="Med spa">Med spa</option>
+          <option value="Medical practice">Medical practice</option>
+          <option value="Mental health">Mental health</option>
+          <option value="Mobile mechanic">Mobile mechanic</option>
+          <option value="Moving company">Moving company</option>
+          <option value="Music lessons">Music lessons</option>
+          <option value="Nursery">Nursery</option>
+          <option value="Nutritionist">Nutritionist</option>
+          <option value="Optometry">Optometry</option>
+          <option value="Orthodontics">Orthodontics</option>
+          <option value="Painting contractor">Painting contractor</option>
+          <option value="Personal training">Personal training</option>
+          <option value="Pest control">Pest control</option>
+          <option value="Pet grooming">Pet grooming</option>
+          <option value="Pet sitting">Pet sitting</option>
+          <option value="Pharmacy">Pharmacy</option>
+          <option value="Photography">Photography</option>
+          <option value="Physical therapy">Physical therapy</option>
+          <option value="Pilates studio">Pilates studio</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="Podiatry">Podiatry</option>
+          <option value="Pool service">Pool service</option>
+          <option value="Printing">Printing</option>
+          <option value="Property management">Property management</option>
+          <option value="Real estate">Real estate</option>
+          <option value="Remodeling">Remodeling</option>
+          <option value="Restaurant">Restaurant</option>
+          <option value="Roofing">Roofing</option>
+          <option value="Salon">Salon</option>
+          <option value="Senior care">Senior care</option>
+          <option value="Signage">Signage</option>
+          <option value="Solar installer">Solar installer</option>
+          <option value="Spa">Spa</option>
+          <option value="Storage units">Storage units</option>
+          <option value="Summer camp">Summer camp</option>
+          <option value="Tax preparation">Tax preparation</option>
+          <option value="Tutoring">Tutoring</option>
+          <option value="Urgent care">Urgent care</option>
+          <option value="Veterinary">Veterinary</option>
+          <option value="Videography">Videography</option>
+          <option value="Wedding planner">Wedding planner</option>
+          <option value="Web design">Web design</option>
+          <option value="Yoga studio">Yoga studio</option>
+        </datalist>
+
+        <label for="monthly-revenue">Monthly revenue</label>
+        <div class="slider-row">
+          <input type="range" id="monthly-revenue" min="0" max="200000" value="50000" step="1000">
+          <span class="slider-value" id="monthly-revenue-value">$50,000</span>
+        </div>
+
+        <label for="avg-revenue">Average revenue per customer</label>
+        <div class="slider-row">
+          <input type="range" id="avg-revenue" min="50" max="10000" value="500" step="50">
+          <span class="slider-value" id="avg-revenue-value">$500</span>
+        </div>
+
+        <label for="leads">Leads per month</label>
+        <input type="number" id="leads" min="0" value="100" placeholder="e.g. 100">
+
+        <label for="deals">Deals won per month</label>
+        <input type="number" id="deals" min="0" value="20" placeholder="e.g. 20">
+
+        <label for="traffic">Website traffic per month</label>
+        <input type="number" id="traffic" min="0" value="5000" placeholder="e.g. 5000">
+
+        <label for="response-time">Lead response time</label>
+        <select id="response-time">
+          <option value="0">Instant (&lt;5 min)</option>
+          <option value="1">Within 1 hour</option>
+          <option value="2">Same day</option>
+          <option value="3">1–2 days</option>
+          <option value="4">3+ days</option>
+        </select>
+
+        <div class="current-metrics">
+          <h3>Current metrics</h3>
+          <p><span class="metric-label">Conversion rate:</span> <span id="conversion-display">20%</span></p>
+          <p><span class="metric-label">Current revenue estimate:</span> <span id="revenue-display">$10,000</span>/mo</p>
+        </div>
+
+        <button type="button" class="btn-analyze" id="btn-analyze">Analyze leaks</button>
+      </section>
+
+      <section class="card card-viz">
+        <h2>Your revenue bucket</h2>
+        <div class="bucket-container">
+          <div class="tap-assembly">
+            <div class="tap-head" aria-hidden="true"></div>
+            <div class="tap-stream" id="tap-stream" aria-hidden="true"></div>
+          </div>
+          <div class="bucket">
+            <div class="bucket-fill" id="bucket-fill"></div>
+            <div class="bucket-holes" id="bucket-holes" aria-hidden="true">
+              <span class="hole hole-1"></span>
+              <span class="hole hole-2"></span>
+              <span class="hole hole-3"></span>
+              <span class="hole hole-4"></span>
+              <span class="leak leak-1"></span>
+              <span class="leak leak-2"></span>
+              <span class="leak leak-3"></span>
+              <span class="leak leak-4"></span>
+            </div>
+          </div>
+        </div>
+        <div class="bucket-labels" id="bucket-labels">
+          <span class="label-flowing">Flowing in: <strong id="label-flowing">$0</strong></span>
+          <span class="label-captured">Captured: <strong id="label-captured">$0</strong></span>
+          <span class="label-leaking" id="label-leaking-wrap">Leaking: <strong id="label-leaking">$0</strong></span>
+        </div>
+
+        <div class="results-section" id="results-section" aria-hidden="true">
+          <h3>Estimated leakage: <span id="leakage-total">$0</span>/mo</h3>
+          <div class="bar-comparison">
+            <div class="bar-row">
+              <span class="bar-label">Current</span>
+              <div class="bar-track"><div class="bar-fill bar-current" id="bar-current"></div></div>
+              <span class="bar-value" id="bar-current-value">$0</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">With Wonderly</span>
+              <div class="bar-track"><div class="bar-fill bar-projected" id="bar-projected"></div></div>
+              <span class="bar-value" id="bar-projected-value">$0</span>
+            </div>
+          </div>
+          <div class="leak-cards" id="leak-cards">
+            <p class="zero-leakage-message" id="zero-leakage-message" hidden>No significant leakage detected with your current settings.</p>
+            <div class="leak-card">
+              <span class="leak-card-title">Response time</span>
+              <span class="leak-card-amount" id="leak-card-1-amount">$0</span>
+              <p class="leak-card-desc" id="leak-card-1-desc">Slow response causes leads to go cold.</p>
+              <p class="leak-card-suggestion calm" id="leak-card-1-suggestion-calm">Respond within minutes to keep prospects engaged.</p>
+              <p class="leak-card-suggestion savage" id="leak-card-1-suggestion-savage" hidden>Stop ghosting leads. Respond fast or lose them.</p>
+            </div>
+            <div class="leak-card">
+              <span class="leak-card-title">Conversion gap</span>
+              <span class="leak-card-amount" id="leak-card-2-amount">$0</span>
+              <p class="leak-card-desc" id="leak-card-2-desc">Conversion rate is below potential.</p>
+              <p class="leak-card-suggestion calm" id="leak-card-2-suggestion-calm">Optimize follow-up sequences and qualification.</p>
+              <p class="leak-card-suggestion savage" id="leak-card-2-suggestion-savage" hidden>Your conversion is leaving money on the table. Fix it.</p>
+            </div>
+            <div class="leak-card">
+              <span class="leak-card-title">Lead volume</span>
+              <span class="leak-card-amount" id="leak-card-3-amount">$0</span>
+              <p class="leak-card-desc" id="leak-card-3-desc">Lead volume could be higher.</p>
+              <p class="leak-card-suggestion calm" id="leak-card-3-suggestion-calm">Capture more qualified leads from your existing traffic.</p>
+              <p class="leak-card-suggestion savage" id="leak-card-3-suggestion-savage" hidden>You're turning away leads. Capture more before they bounce.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

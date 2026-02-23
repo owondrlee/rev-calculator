@@ -1,0 +1,9 @@
+# Cursor Rules
+
+- Follow /ai-brain/engineering-constitution.md (non-negotiable).
+- Prefer minimal diffs. Avoid rewriting files unless necessary.
+- Delete obsolete code before adding new code.
+- Keep responsibilities separated (UI/domain/IO).
+- Ask clarifying questions only when truly necessary (max 5).
+- If complexity increases, propose refactor/rewrite options.
+- Avoid new dependencies unless they clearly reduce complexity.

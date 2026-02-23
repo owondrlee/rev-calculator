@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Cursor / VSCode local settings
+.vscode/
+
+# Python (if ever used)
+__pycache__/
+*.pyc
+
+# Mac system junk
+.AppleDouble
+.LSOverride
